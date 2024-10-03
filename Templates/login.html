@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .mega-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #FF9933, #138808, #FFFFFF); /* Indian flag colors */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px; /* Compact design */
+            background-color: #fff3e0; /* Light background */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border: 2px solid #FF9933; /* Border matching the flag */
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #138808;
+            text-align: center; /* Centered heading */
+            font-size: 28px;
+            font-weight: bold;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #138808; /* Focus color */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #5cb85c; /* Bootstrap success color */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c; /* Darker green on hover */
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: small;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        marquee {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="mega-container">
+        <div class="container" id="container">
+            
+            <!-- Login Form -->
+            <form method="POST" action="">
+                <h1>Log In</h1>
+                
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.username.label }}  <!-- Render label -->
+                    {{ form.username(size=32, placeholder="Username") }}  <!-- Placeholder -->
+                </div>
+                <div>
+                    {{ form.password.label }}  <!-- Render label -->
+                    {{ form.password(size=32, placeholder="Password") }}
+                </div>
+                <div>
+                    {{ form.submit() }} 
+                </div>
+                <p>Don't have an account? <a href="{{ url_for('home') }}">Sign Up</a></p>
+            </form>
+
+         </div>
+
+         <!-- Footer Section -->
+         <footer>
+             <marquee>This Project is Submitted by 
+                 <b>Arya Keskar (B122)</b>, 
+                 <b>Rushikesh Ramteke (B123)</b>, 
+                 <b>Rachit Khatri (B121)</b>, 
+                 and 
+                 <b>Yash Thakkar (B120)</b> for Software Engineering
+             </marquee>
+         </footer>
+
+     </div>
+
+</body>
+</html>
